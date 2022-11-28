@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="bookmark"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Bookmark</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Bookmark</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card lines="inset">
+    <ion-item>
+      <ion-label>{{ id }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ judul }} </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ isi }} </ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

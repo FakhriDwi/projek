@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Diary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"> Bookmark </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list lines="full">
+    <ion-button
+      type="button"
+      [routerLink]="['/bookmark-tambah']"
+      routerLinkActive="router-link-active"
+      color="success"
+      expand="block"
+    >
+      Tambah Bookmark</ion-button
+    >
+  </ion-list>
+  <ion-list>
+    <ion-list-header>List Data Bookmark</ion-list-header>
+  </ion-list>
+  <ion-card lines="inset" *ngFor="let data_value of data">
+    <ion-item>
+      <ion-label>
+        <p>{{ data_value.judul }}</p>
+      </ion-label>
+      <ion-icon
+        color="primary"
+        slot="end"
+        [routerLink]="['/bookmark-lihat/',data_value.id]"
+        routerLinkActive="router-link-active"
+        name="eye-outline"
+        size="small"
+      ></ion-icon>
+      <ion-icon
+        color="warning"
+        slot="end"
+        [routerLink]="['/bookmark-edit/',data_value.id]"
+        routerLinkActive="router-link-active"
+        name="create-outline"
+        size="small"
+      ></ion-icon>
+      <ion-icon
+        color="danger"
+        slot="end"
+        (click)="deleteDataBookmark(data_value.id)"
+        name="trash-outline"
+        size="small"
+      ></ion-icon>
+    </ion-item>
+  </ion-card>
+</ion-content>

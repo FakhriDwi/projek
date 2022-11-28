@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="bookmark"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tambah Diary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"> Tambah Bookmark </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="floating">Bookmark</ion-label>
+      <ion-input required [(ngModel)]="judul" placeholder="Judul" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Isi</ion-label>
+      <ion-input required [(ngModel)]="isi" placeholder="Isi" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          type="button"
+          (click)="AddDataBookmark()"
+          color="primary"
+          shape="full"
+          expand="block"
+          >Tambah Bookmark
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
